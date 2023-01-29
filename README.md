@@ -1,2 +1,2 @@
 # battery_checker
-Linux Laptop Batter Checker
+Linux Laptop Battery Checker

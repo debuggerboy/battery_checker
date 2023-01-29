@@ -10,8 +10,8 @@ import (
 
 func main() {
 
-    // Battery Alert Cutoff Percentage
-    var batt_cutoff_percent = 20
+        // Battery Alert Cutoff Percentage
+        var batt_cutoff_percent = 20
 
 	// Open the battery information files
 	statusFile, err := os.Open("/sys/class/power_supply/BAT0/status")
@@ -41,7 +41,7 @@ func main() {
 		return
 	}
 
-	// Check if the battery is discharging and below 20%
+	// Check if the battery is discharging and below batt_cutoff_percent
 	if batteryStatus == "Discharging" && batteryCapacity < batt_cutoff_percent {
 		fmt.Println("The battery is discharging and below", batt_cutoff_percent, "%.")
     } else if batteryStatus == "Discharging" && batteryCapacity > batt_cutoff_percent {
